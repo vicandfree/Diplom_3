@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import site.nomoreparties.stellarburgers.client.UserClient;
@@ -27,6 +28,7 @@ public class ConstructorTest {
     }
 
     @Test
+    @DisplayName("Проверяем открытие вкладки с булочками")
     public void bunsTabTest() {
         MainPage mainPage = new MainPage(driver);
         mainPage.openMainPage();
@@ -36,6 +38,7 @@ public class ConstructorTest {
     }
 
     @Test
+    @DisplayName("Проверяем открытие вкладки с соусами")
     public void saucesTabTest() {
         MainPage mainPage = new MainPage(driver);
         mainPage.openMainPage();
@@ -44,6 +47,7 @@ public class ConstructorTest {
     }
 
     @Test
+    @DisplayName("Проверяем открытие вкладки с ингредиентами")
     public void ingredientsTabTest() {
         MainPage mainPage = new MainPage(driver);
         mainPage.openMainPage();

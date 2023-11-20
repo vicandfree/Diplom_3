@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import site.nomoreparties.stellarburgers.client.UserClient;
@@ -31,6 +32,7 @@ public class RegistrationTest {
     }
 
     @Test
+    @DisplayName("Проверяем регистрацию с верными данными")
     public void testRegistration() {
         User user = UserGenerator.generateRandom();
 
@@ -60,6 +62,7 @@ public class RegistrationTest {
     }
 
     @Test
+    @DisplayName("Проверяем регистрацию с паролем неверной длины")
     public void testRegistrationWithInvalidPassword() {
         User user = UserGenerator.generateRandom();
         user.setPassword("12345");

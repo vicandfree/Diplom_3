@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import site.nomoreparties.stellarburgers.client.UserClient;
@@ -32,6 +33,7 @@ public class CabinetTest {
     }
 
     @Test
+    @DisplayName("Проверяем переход из личного кабинета в конструктор")
     public void redirectFromCabinetToConstructorSuccess() {
         User user = UserGenerator.generateRandom();
         userClient.create(user);
@@ -56,6 +58,7 @@ public class CabinetTest {
     }
 
     @Test
+    @DisplayName("Проверяем переход из личного кабинета на главную страницу")
     public void redirectFromCabinetToMainPageSuccess() {
         User user = UserGenerator.generateRandom();
         userClient.create(user);
@@ -80,6 +83,7 @@ public class CabinetTest {
     }
 
     @Test
+    @DisplayName("Проверяем выход из аккаунта в личном кабинете")
     public void logoutFromCabinetSuccess() {
         User user = UserGenerator.generateRandom();
         userClient.create(user);
@@ -100,8 +104,7 @@ public class CabinetTest {
         CurrentPage currentPage = new CurrentPage(driver);
         currentPage.waitForUrl(LOGIN_URL);
 
-        loginPage.enterEmail(user.getEmail());
-        loginPage.enterPassword(user.getPassword());
-        loginPage.login();
+        // Проверяем, что нас перекинуло на страницу логина после выхода из аккаунта
+        assertEquals(LOGIN_URL, currentPage.getPageUrl());
     }
 }

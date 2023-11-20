@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -46,6 +47,7 @@ public class SwitchToLoginPageTest {
     }
 
     @Test
+    @DisplayName("Проверяем переход на страницу логина по разным кнопкам")
     public void burgerOpenAccountPageSuccessful() {
         MainPage page = new MainPage(driver);
         page.openMainPage();

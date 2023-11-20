@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import site.nomoreparties.stellarburgers.client.UserClient;
@@ -30,6 +31,7 @@ public class RestorePageTest {
     }
 
     @Test
+    @DisplayName("Проверяем переход со страницы сброса пароля на страницу логина")
     public void returnFromRecoveryToLoginSuccessful() {
         RestorePage recoveryPage = new RestorePage(driver);
         recoveryPage.open();
